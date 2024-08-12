@@ -24,3 +24,8 @@
 ## Будущие обновления
 
 Улучшение пользовательского интерфейса и адаптивности.
+
+## Пример работы
+
+https://alyonachka.github.io/js-shop-cart-pages/shop.html
+По значку корзины сверху справа можно перейти на страницу корзины, либо по ссылке https://alyonachka.github.io/js-shop-cart-pages/cart.html
