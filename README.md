@@ -27,5 +27,5 @@
 
 ## Пример работы
 
-https://alyonachka.github.io/js-shop-cart-pages/shop.html
-По значку корзины сверху справа можно перейти на страницу корзины, либо по ссылке https://alyonachka.github.io/js-shop-cart-pages/cart.html
+Пример работы сайта доступен по ссылке https://alyonachka.github.io/js-shop-cart-pages/shop.html, 
+по значку корзины справа сверху можно перейти на страницу корзины, либо по ссылке https://alyonachka.github.io/js-shop-cart-pages/cart.html
