@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Discover a wide range of products with easy pagination, 
+            and quickly add items to your shopping cart or wishlist. Enjoy a 
+            seamless shopping experience with our dynamic, JavaScript-powered 
+            store that saves your preferences using local storage."
+        />
+        <title>Shop</title>
+        <link rel="stylesheet" href="./styles/reset.css" />
+        <link rel="stylesheet" href="./styles/commons.css" />
+        <link rel="stylesheet" href="./styles/header.css" />
+        <link rel="stylesheet" href="./styles/footer.css" />
+        <link rel="stylesheet" href="./styles/shop.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="left-side">
+                <div class="logo-container">
+                    <div class="burger-menu">
+                        <input
+                            type="checkbox"
+                            id="burger-checkbox"
+                            class="burger-checkbox"
+                        />
+                        <label class="burger" for="burger-checkbox"></label>
+                    </div>
+                    <div class="logo">
+                        <img src="./icons/logo.svg" alt="logo" />
+                    </div>
+                </div>
+                <div class="menu">
+                    <div class="menu-item">
+                        <span>Home</span>
+                    </div>
+                    <div class="menu-item active">
+                        <span>Pages</span>
+                        <img
+                            src="./icons/arrow.svg"
+                            alt="arrow"
+                            class="arrow-default"
+                        />
+                        <img
+                            src="./icons/arrow-pink.svg"
+                            alt="arrow"
+                            class="arrow-hover"
+                        />
+                    </div>
+                    <div class="menu-item">
+                        <span>Shop</span>
+                        <img
+                            src="./icons/arrow.svg"
+                            alt="arrow"
+                            class="arrow-default"
+                        />
+                        <img
+                            src="./icons/arrow-pink.svg"
+                            alt="arrow"
+                            class="arrow-hover"
+                        />
+                    </div>
+                    <div class="menu-item">
+                        <span>Blog</span>
+                    </div>
+                    <div class="menu-item">
+                        <span>Contact</span>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="header-icon">
+                    <img src="./icons/search.svg" alt="search" />
+                </div>
+                <div class="header-icon">
+                    <img src="./icons/profile.svg" alt="profile" />
+                </div>
+                <div class="header-icon">
+                    <img src="./icons/favorites.svg" alt="favorites" />
+                    <div class="counter js-favorites-counter">0</div>
+                </div>
+                <a href="cart.html">
+                    <div class="header-icon">
+                        <img src="./icons/cart.svg" alt="cart" />
+                        <div class="counter js-basket-counter">0</div>
+                    </div>
+                </a>
+            </div>
+        </header>
+
+        <div class="page-header">
+            <div class="left-block">
+                <div class="pic-header">
+                    <img
+                        src="./icons/dots-icon-header.svg"
+                        alt="Dots picture"
+                    />
+                </div>
+                <div class="title-menu-wrapper">
+                    <div class="content">
+                        <div class="title">Shop</div>
+                        <div class="menu">
+                            <a class="menu-item">Home</a>
+                            <a class="menu-item active">Shop</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-block"></div>
+        </div>
+
+        <div class="container">
+            <div class="shop">
+                <div class="sidebar">
+                    <div class="search">
+                        <label>
+                            <input
+                                type="text"
+                                placeholder="Search"
+                                class="input search-row"
+                                id="search-row"
+                            />
+                            <img
+                                src="./icons/search.svg"
+                                alt="search icon"
+                                class="search-icon"
+                            />
+                        </label>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-title">Categories</div>
+                        <div class="sidebar-content">
+                            <ul class="custom-list">
+                                <li
+                                    class="item active js-category"
+                                    data-category="All"
+                                >
+                                    All
+                                </li>
+                                <li
+                                    class="item js-category"
+                                    data-category="Men"
+                                >
+                                    Men
+                                </li>
+                                <li
+                                    class="item js-category"
+                                    data-category="Women"
+                                >
+                                    Women
+                                </li>
+                                <li
+                                    class="item js-category"
+                                    data-category="Accessories"
+                                >
+                                    Accessories
+                                </li>
+                                <li
+                                    class="item js-category"
+                                    data-category="New Arrivals"
+                                >
+                                    New Arrivals
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-title">Price</div>
+                        <div class="sidebar-content">
+                            <div class="price-bar">
+                                <input
+                                    type="text"
+                                    placeholder="0"
+                                    class="input js-price-min"
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="200"
+                                    class="input js-price-max"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-title">Color</div>
+                        <div class="sidebar-content">
+                            <div class="colors">
+                                <div class="color">
+                                    <input
+                                        type="checkbox"
+                                        class="color-checkbox"
+                                        id="black"
+                                        name="black"
+                                        value="Black"
+                                    />
+                                    <label for="black" class="color-name"
+                                        >Black</label
+                                    >
+                                </div>
+                                <div class="color">
+                                    <input
+                                        type="checkbox"
+                                        class="color-checkbox"
+                                        id="blue"
+                                        name="blue"
+                                        value="Blue"
+                                    />
+                                    <label for="blue" class="color-name"
+                                        >Blue</label
+                                    >
+                                </div>
+                                <div class="color">
+                                    <input
+                                        type="checkbox"
+                                        class="color-checkbox"
+                                        id="red"
+                                        name="red"
+                                        value="Red"
+                                    />
+                                    <label for="red" class="color-name"
+                                        >Red</label
+                                    >
+                                </div>
+                                <div class="color">
+                                    <input
+                                        type="checkbox"
+                                        class="color-checkbox"
+                                        id="yellow"
+                                        name="yellow"
+                                        value="Yellow"
+                                    />
+                                    <label for="yellow" class="color-name"
+                                        >Yellow</label
+                                    >
+                                </div>
+                                <div class="color">
+                                    <input
+                                        type="checkbox"
+                                        class="color-checkbox"
+                                        id="green"
+                                        name="green"
+                                        value="Green"
+                                    />
+                                    <label for="green" class="color-name"
+                                        >Green</label
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="button-wrapper">
+                            <button class="button" id="apply-filter" disabled>
+                                Apply filter
+                            </button>
+                            <div class="vertical-line"></div>
+                        </div>
+                    </div>
+                    <div class="sidebar-item">
+                        <div class="sidebar-title">Reviewed By You</div>
+                        <div class="sidebar-content">
+                            <div
+                                class="reviewed-products js-reviewed-products"
+                            ></div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img
+                                src="./images/season-sale-baner.svg"
+                                alt="season sale baner"
+                            />
+                        </a>
+                    </div>
+                </div>
+                <div class="products-wrapper">
+                    <div class="sort-and-count">
+                        <div class="products-count">
+                            There are
+                            <span class="bold" id="products-count"
+                                >loading..</span
+                            >
+                            products in this category
+                        </div>
+                        <!-- TODO: заменить на кастомный селект-->
+                        <div class="sort">
+                            <select class="input" id="sort">
+                                <option value="">relevance</option>
+                                <option value="ASC">ASC</option>
+                                <option value="DESC">DESC</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="products js-products"></div>
+                    <div class="pagination" id="pagination">
+                        <div class="button left js-left-arrow">
+                            <img
+                                src="./icons/left-pagin-arrow.svg"
+                                alt="left-arrow"
+                            />
+                        </div>
+                        <div class="pages js-pages"></div>
+                        <div class="button right js-right-arrow">
+                            <img
+                                src="./icons/right-pagin-arrow.svg"
+                                alt="right-arrow"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="newsletter-wrapper">
+            <div class="newsletter">
+                <div class="dots-icon">
+                    <img src="./icons/dots-icon-newsletter.svg" alt="" />
+                </div>
+                <div class="newsletter-content">
+                    <div class="newsletter-info">
+                        <div class="title">Newsletter</div>
+                        <div class="text">
+                            Be the first to hear about deals, offers and
+                            upcoming collections.
+                        </div>
+                    </div>
+                    <div class="newsletter-form">
+                        <input
+                            type="text"
+                            placeholder="Enter your email"
+                            class="input"
+                        />
+                        <div class="button-wrapper">
+                            <button class="button">Subscribe</button>
+                            <div class="vertical-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-info">
+                    <div class="column column-1">
+                        <div class="logo">
+                            <img src="./icons/logo.svg" alt="logo" />
+                        </div>
+                        <div class="about-brand">
+                            Cillum eu id enim aliquip aute ullamco anim. Culpa
+                            deserunt nostrud excepteur voluptate.
+                        </div>
+                        <div class="find-us">
+                            <div class="find-us-text">Find us here:</div>
+                            <div class="find-us-links">
+                                <div class="find-us-link">
+                                    <a href="">FB</a>
+                                </div>
+                                <div class="line"></div>
+                                <div class="find-us-link">
+                                    <a href="">TW</a>
+                                </div>
+                                <div class="line"></div>
+                                <div class="find-us-link">
+                                    <a href="">INS</a>
+                                </div>
+                                <div class="line"></div>
+                                <div class="find-us-link">
+                                    <a href="">PT</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column column-2">
+                        <div class="title">About</div>
+                        <ul class="custom-list">
+                            <li class="item"><a href="">About us</a></li>
+                            <li class="item"><a href="">Collections</a></li>
+                            <li class="item"><a href="">Shop</a></li>
+                            <li class="item"><a href="">Blog</a></li>
+                            <li class="item"><a href="">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="column column-3">
+                        <div class="title">Useful links</div>
+                        <ul class="custom-list">
+                            <li class="item"><a href="">Privacy Policy</a></li>
+                            <li class="item"><a href="">Terms of use</a></li>
+                            <li class="item"><a href="">Support</a></li>
+                            <li class="item">
+                                <a href="">Shipping details</a>
+                            </li>
+                            <li class="item"><a href="">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <div class="column column-4">
+                        <div class="title">Newsletter</div>
+                        <div class="newsletter-text">
+                            Subscribe to be the first to hear about deals,
+                            offers and upcoming collections.
+                        </div>
+                        <div class="newsletter-form">
+                            <form action="">
+                                <label>
+                                    <input
+                                        type="text"
+                                        placeholder="Enter your email"
+                                        class="input"
+                                    />
+                                    <img
+                                        src="./icons/send.svg"
+                                        alt="send"
+                                        class="send-icon"
+                                    />
+                                </label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <div>© All right reserved. Fashionee 2020</div>
+                    <div class="payment-methods-container">
+                        <div>Payment methods:</div>
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <img src="./icons/visa.svg" alt="visa" />
+                            </div>
+                            <div class="payment-method">
+                                <img
+                                    src="./icons/master-card.svg"
+                                    alt="master-card"
+                                />
+                            </div>
+                            <div class="payment-method">
+                                <img src="./icons/paypal.svg" alt="paypal" />
+                            </div>
+                            <div class="payment-method">
+                                <img src="./icons/paoneer.svg" alt="paoneer" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pic-footer-left">
+                <img
+                    src="./icons/dots-icon-footer-left.svg"
+                    alt="Dots picture left side"
+                />
+            </div>
+            <div class="pic-footer-right">
+                <img
+                    src="./icons/dots-icon-footer-right.svg"
+                    alt="Dots picture right side"
+                />
+            </div>
+        </footer>
+        <script src="./script-shop.js"></script>
+    </body>
+</html>
